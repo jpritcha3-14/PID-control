@@ -1,10 +1,10 @@
 from gpiozero import DistanceSensor, AngularServo
-from PID import pidController
+from PID import PidController
 from time import sleep
 
 sensor = DistanceSensor(echo=24, trigger=23)
 servo = AngularServo(25, min_angle=50, max_angle=0)
-controller = pidController(P=0.5,D=0.4,I=0.00, noise_threshold=10)
+controller = PidController(P=0.5,D=0.4,I=0.00, noise_threshold=10)
 SETPOINT = 25
 MIN_COMMAND = 0
 MAX_COMMAND = 50
